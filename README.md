@@ -14,7 +14,7 @@ import sass from 'osia-sass';
 osia.task('build', () => 
   osia.open('foo.scss')
     .then(sass())
-    .then(console.log)
+    .then(bar())
 );
 ```
 
