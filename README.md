@@ -8,7 +8,14 @@ $ npm install osia-sass
 
 ## Usage
 ```javascript
-import osia-sass from 'osia-sass';
+import osia from 'osia';
+import sass from 'osia-sass';
+
+osia.task('build', () => 
+  osia.open('foo.scss')
+    .then(sass())
+    .then(console.log)
+);
 ```
 
 ## Credits
