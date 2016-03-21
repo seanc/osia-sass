@@ -3,7 +3,7 @@
 import { plugin } from 'osia';
 import { render } from 'node-sass';
 
-export default function sass(opts = {}) {
+export default function(opts = {}) {
   return plugin((file, resolve, reject) => {
     opts.file = file.path;
     render(opts, (err, compiled) => {
