@@ -1,14 +1,16 @@
 'use strict';
 
+import { plugin } from 'osia';
 import { render } from 'node-sass';
 
 export default function sass(opts = {}) {
-  const results = [];
-  return function handler(files) {
-    for(let file of files) {
-      opts.file = file.path;
-      render(opts, (err, compiled) => results.push(compiled));
-    }
-    return Promise.resolve(results);
-  }
+  return plugin((file, resolve, reject) => {
+    opts.file = file.path;
+    render(opts, (err, compiled) => {
+      if (err) return reject(err);
+      file.contents = compiled.css;
+      file.extname = '.css';
+      resolve(file);
+    });
+  });
 };
