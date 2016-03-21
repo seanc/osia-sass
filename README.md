@@ -5,7 +5,6 @@
 ```shell
 $ npm install osia-sass
 ```
-
 ## Usage
 ```javascript
 import osia from 'osia';
@@ -15,6 +14,18 @@ osia.task('build', () =>
   osia.open('foo.scss')
     .then(sass())
     .then(bar())
+);
+```
+
+### Options
+osia-sass uses [node-sass](https://www.npmjs.com/package/node-sass) so you can pass in options just as you would with node-sass.
+
+Example:
+```javascript
+osia.task('sass', () => 
+  osia.open('foo.scss')
+    .then(sass({outputStyle: 'compressed'}))
+    .then(osia.save('./styles'))
 );
 ```
 
