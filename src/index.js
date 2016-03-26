@@ -1,6 +1,6 @@
 'use strict';
 
-import { plugin } from 'osia';
+import plugin from 'osia-plugin';
 import { render } from 'node-sass';
 
 export default function(opts = {}) {

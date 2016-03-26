@@ -26,5 +26,8 @@
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2"
+  },
+  "dependencies": {
+    "osia-plugin": "^1.0.0"
   }
 }
